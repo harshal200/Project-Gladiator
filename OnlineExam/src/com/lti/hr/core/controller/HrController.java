@@ -1,6 +1,7 @@
 package com.lti.hr.core.controller;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -39,7 +40,7 @@ public class HrController {
 	 */
 	//@RequestMapping("/register")
 	@PostMapping(value="/register", consumes ="applicatio/json")
-	public void register( @RequestBody UserRegister user )
+	public void register(@RequestBody UserRegister user)
 	{
 		
 	System.out.println(user);
@@ -52,6 +53,16 @@ public class HrController {
 	}
 	
 	@GetMapping(value = "/userlist",produces ="application/json")
-	public @ResponseBody ArrayList<UserRegister> 
+	public @ResponseBody ArrayList<UserRegister> fetchFromTable() {
+		ArrayList<UserRegister> userList = null;
+		try
+		{
+			userList = service.fetchFromTable();
+		}
+		catch(HrException e) {
+			e.printStackTrace();
+		}
+		return userList;
+	}
 	
 }

@@ -1,4 +1,6 @@
-package com.lti.hr.core.services;
+package com.lti.hr.core.service;
+
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +23,12 @@ public class UserRegisterServiceImpl implements UserRegisterDao {
 	public boolean addUser(UserRegister user) throws HrException {
 		
 		return dao.addUser(user);
+	}
+
+	@Override
+	public ArrayList<UserRegister> fetch(UserRegister user) throws HrException {
+		// TODO Auto-generated method stub
+		return dao.fetch(user);
 	}
 	
 
