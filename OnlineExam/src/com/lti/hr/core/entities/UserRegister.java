@@ -1,23 +1,20 @@
 package com.lti.hr.core.entities;
 	
-	import java.io.Serializable;
-	import java.util.List;
+	
+import java.util.List;
 
 	import javax.persistence.Column;
 	import javax.persistence.Entity;
 	import javax.persistence.GeneratedValue;
 	import javax.persistence.GenerationType;
 	import javax.persistence.Id;
-	import javax.persistence.JoinColumn;
-	import javax.persistence.OneToMany;
-	import javax.persistence.OneToOne;
-	import javax.persistence.SequenceGenerator;
+	
 	import javax.persistence.Table;
 
-	@Entity
+	@Entity(name="ureg")
 	@Table(name = "user_register")
 	//@SequenceGenerator(name = "seq", sequenceName = "register_seq_new", allocationSize = 1, initialValue = 1)
-	public class UserRegister implements Serializable {
+	public class UserRegister {
 		/**
 		 * 
 		 */

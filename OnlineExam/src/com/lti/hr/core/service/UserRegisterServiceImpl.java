@@ -8,29 +8,26 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.lti.hr.core.daos.UserRegisterDao;
-import com.lti.hr.core.daos.UserRegisterDaoImpl;
 import com.lti.hr.core.entities.UserRegister;
 import com.lti.hr.core.exception.HrException;
 
 @Service
-public class UserRegisterServiceImpl implements UserRegisterDao {
+public class UserRegisterServiceImpl implements UserRegisterService{
 	
 	@Autowired
 	private UserRegisterDao dao;
 
-	@Transactional(propagation = Propagation.REQUIRES_NEW)
+	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	@Override
-	public boolean addUser(UserRegister user) throws HrException {
+	public boolean createNewUser(UserRegister user) throws HrException {
 		
-		return dao.addUser(user);
+		return dao.insertNewUser(user);
 	}
 
 	@Override
-	public ArrayList<UserRegister> fetch(UserRegister user) throws HrException {
-		// TODO Auto-generated method stub
-		return dao.fetch(user);
+	public ArrayList<UserRegister> fetch() throws HrException {
+		return dao.fetch();
 	}
-	
 
 
 }

@@ -1,4 +1,4 @@
-package com.lti.hr.core.service;
+ package com.lti.hr.core.service;
 
 import java.util.ArrayList;
 
@@ -7,6 +7,6 @@ import com.lti.hr.core.exception.HrException;
 
 public interface UserRegisterService {
 
-	public boolean addUserToTable(UserRegister user) throws HrException;
-	public ArrayList<UserRegister> fetchFromTable() throws HrException;
+	public boolean createNewUser(UserRegister user) throws HrException;
+	public ArrayList<UserRegister> fetch() throws HrException;
 }
