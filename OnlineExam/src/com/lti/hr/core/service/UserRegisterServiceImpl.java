@@ -19,7 +19,7 @@ public class UserRegisterServiceImpl implements UserRegisterService{
 
 	@Transactional(propagation=Propagation.REQUIRES_NEW)
 	@Override
-	public boolean createNewUser(UserRegister user) throws HrException {
+	public boolean insertNewUser(UserRegister user) throws HrException {
 		
 		return dao.insertNewUser(user);
 	}

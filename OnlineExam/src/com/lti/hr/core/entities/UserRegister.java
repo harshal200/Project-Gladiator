@@ -1,15 +1,16 @@
 package com.lti.hr.core.entities;
 	
-	
-import java.util.List;
 
-	import javax.persistence.Column;
-	import javax.persistence.Entity;
-	import javax.persistence.GeneratedValue;
-	import javax.persistence.GenerationType;
-	import javax.persistence.Id;
+import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 	
 	import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 	@Entity(name="ureg")
 	@Table(name = "user_register")
@@ -21,8 +22,8 @@ import java.util.List;
 		//private static final long serialVersionUID = 1L;
 
 		//Variables and Column names
-		@Id
 		//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+		@Id
 		@Column(name = "user_id")
 		private int userId;
 
@@ -38,9 +39,9 @@ import java.util.List;
 		@Column(name = "mobile_number")
 		private String mobileNumber;
 		
-
 		@Column(name = "date_of_birth")
-		private String dateOfBirth;
+		@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+		private Date dateOfBirth;
 		
 		@Column(name = "qualification")
 		private String qualification;
@@ -62,7 +63,7 @@ import java.util.List;
 		//Constructors Using Fields
 		
 		public UserRegister(int userId, String firstName, String email, String password, String mobileNumber,
-				String dateOfBirth, String qualification, int yearOfCompletion, String city, String state) {
+				Date dateOfBirth, String qualification, int yearOfCompletion, String city, String state) {
 			super();
 			this.userId = userId;
 			this.firstName = firstName;
@@ -119,11 +120,11 @@ import java.util.List;
 			this.mobileNumber = mobileNumber;
 		}
 
-		public String getDateOfBirth() {
+		public Date getDateOfBirth() {
 			return dateOfBirth;
 		}
 
-		public void setDateOfBirth(String dateOfBirth) {
+		public void setDateOfBirth(Date dateOfBirth) {
 			this.dateOfBirth = dateOfBirth;
 		}
 

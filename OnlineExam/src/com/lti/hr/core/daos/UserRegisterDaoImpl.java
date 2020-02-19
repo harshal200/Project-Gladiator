@@ -23,6 +23,15 @@ public class UserRegisterDaoImpl implements UserRegisterDao{
 
 	
 
+	@Transactional(propagation = Propagation.REQUIRED)
+	@Override
+	public boolean insertNewUser(UserRegister user) throws HrException {
+		System.out.println("Data reached dao: " + user);
+//		manager.merge(user);
+		manager.persist(user);
+		return true;
+	}
+
 	@Override
 	public ArrayList<UserRegister> fetch() throws HrException {
 		String strqry="from ureg";
@@ -32,13 +41,5 @@ public class UserRegisterDaoImpl implements UserRegisterDao{
 		return  (ArrayList<UserRegister>) lst;
 	}
 	
-	@Transactional(propagation = Propagation.REQUIRED)
-	@Override
-	public boolean insertNewUser(UserRegister user) throws HrException {
-		System.out.println("Data reached dao: " + user);
-//		manager.merge(user);
-		manager.persist(user);
-		return true;
-	}
 
 }

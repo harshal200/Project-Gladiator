@@ -7,6 +7,6 @@ import com.lti.hr.core.exception.HrException;
 
 public interface UserRegisterService {
 
-	public boolean createNewUser(UserRegister user) throws HrException;
+	public boolean insertNewUser(UserRegister user) throws HrException;
 	public ArrayList<UserRegister> fetch() throws HrException;
 }

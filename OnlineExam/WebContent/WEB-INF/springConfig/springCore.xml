@@ -24,7 +24,7 @@ http://www.springframework.org/schema/tx/spring-tx.xsd
     </bean>
    
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-<property name="packagesToScan" value="com.lti.hr.core"/>
+<property name="packagesToScan" value="com.lti.hr.core.entities"/>
 <property name="dataSource" ref="ds" />
 
 <property name="jpaVendorAdapter">
