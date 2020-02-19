@@ -4,8 +4,6 @@ package com.lti.hr.core.controller;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.lti.hr.core.entities.Question;
 import com.lti.hr.core.entities.UserRegister;
 import com.lti.hr.core.exception.HrException;
+import com.lti.hr.core.service.QuestionService;
 import com.lti.hr.core.service.UserRegisterService;
 
 
@@ -24,8 +25,8 @@ public class HrController {
 	@Autowired
 	private UserRegisterService service;
 	
-	
-	@RequestMapping(value = "/userList",produces ="application/json",method=RequestMethod.GET)
+
+	@GetMapping(value = "/userList",produces ="application/json"/*,method=RequestMethod.GET*/)
 	public @ResponseBody ArrayList<UserRegister> fetch() {
 		ArrayList<UserRegister> userList = null;
 		try
@@ -38,8 +39,8 @@ public class HrController {
 		return userList;
 	}
 	
-	//@PostMapping(value="/addUser",consumes="application/json")
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/addUser",consumes="application/json")
+	//@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void register(@RequestBody UserRegister user) {
 		System.out.println(user);
 		try {
@@ -49,5 +50,16 @@ public class HrController {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
+	/*
+	 * @PostMapping(value="/questionList",consumes="application/json") public
+	 * ArrayList<Question> displayAllQuestion(){
+	 * 
+	 * ArrayList<Question> questionList=null;
+	 * 
+	 * try { questionList = questionService.fetchQuestions(); } catch (HrException
+	 * e) { // TODO Auto-generated catch block e.printStackTrace(); } return
+	 * questionList; }
+	 */
 }

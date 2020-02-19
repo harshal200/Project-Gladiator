@@ -19,7 +19,7 @@ import com.lti.hr.core.exception.HrException;
 public class UserRegisterDaoImpl implements UserRegisterDao{
 
 	@PersistenceContext
-	EntityManager manager;
+	private EntityManager manager;
 
 	
 
@@ -28,8 +28,8 @@ public class UserRegisterDaoImpl implements UserRegisterDao{
 		String strqry="from ureg";
 		Query qry=manager.createQuery(strqry);
 		//Query qry = manager.createQuery("from ureg");
-		ArrayList<UserRegister> lst=(ArrayList<UserRegister>) qry.getResultList();
-		return lst;
+		List<UserRegister> lst=qry.getResultList();
+		return  (ArrayList<UserRegister>) lst;
 	}
 	
 	@Transactional(propagation = Propagation.REQUIRED)
@@ -37,7 +37,7 @@ public class UserRegisterDaoImpl implements UserRegisterDao{
 	public boolean insertNewUser(UserRegister user) throws HrException {
 		System.out.println("Data reached dao: " + user);
 //		manager.merge(user);
-	manager.persist(user);
+		manager.persist(user);
 		return true;
 	}
 
