@@ -24,44 +24,41 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 		//Variables and Column names
 		//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
 		@Id
-		@Column(name = "user_id")
+		@Column(name = "USER_ID")
 		private int userId;
 
-		@Column(name = "full_name")
+		@Column(name = "FULL_NAME")
 		private String firstName;
 
-		@Column(name = "email_id")
+		@Column(name = "EMAIL_ID")
 		private String email;
 		
-		@Column(name = "password")
+		@Column(name = "PASSWORD")
 		private String password;
 
-		@Column(name = "mobile_number")
+		@Column(name = "MOBILE_NUMBER")
 		private String mobileNumber;
 		
-		@Column(name = "date_of_birth")
+		@Column(name = "DATE_OF_BIRTH")
 		@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
 		private Date dateOfBirth;
 		
-		@Column(name = "qualification")
+		@Column(name = "QUALIFICATION")
 		private String qualification;
 		
-		@Column(name = "year_of_completion")
+		@Column(name = "YEAR_OF_COMPLETION")
 		private int yearOfCompletion;
 
-		@Column(name = "city")
+		@Column(name = "CITY")
 		private String city;
 
-		@Column(name = "state")
+		@Column(name = "STATE")
 		private String state;
-		
+
 		public UserRegister() {
-			// TODO Auto-generated constructor stub
+			super();
 		}
-		
-		
-		//Constructors Using Fields
-		
+
 		public UserRegister(int userId, String firstName, String email, String password, String mobileNumber,
 				Date dateOfBirth, String qualification, int yearOfCompletion, String city, String state) {
 			super();
@@ -77,9 +74,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 			this.state = state;
 		}
 
-		
-		//Generating Getter and Setters
-		
 		public int getUserId() {
 			return userId;
 		}
@@ -166,5 +160,5 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 					+ password + ", mobileNumber=" + mobileNumber + ", dateOfBirth=" + dateOfBirth + ", qualification="
 					+ qualification + ", yearOfCompletion=" + yearOfCompletion + ", city=" + city + ", state=" + state
 					+ "]";
-		}	
+		}
 }

@@ -74,14 +74,4 @@ public class UserResponse {
 		return "UserResponse [userResponseId=" + userResponseId + ", examId=" + examId + ", questionId=" + questionId
 				+ ", selectedAnswer=" + selectedAnswer + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
