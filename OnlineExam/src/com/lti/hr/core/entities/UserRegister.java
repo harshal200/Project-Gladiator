@@ -37,7 +37,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 		private String password;
 
 		@Column(name = "MOBILE_NUMBER")
-		private String mobileNumber;
+		private int mobileNumber;
 		
 		@Column(name = "DATE_OF_BIRTH")
 		@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")

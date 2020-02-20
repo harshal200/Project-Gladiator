@@ -9,6 +9,6 @@ import com.lti.hr.core.exception.HrException;
 
 public interface ExamResultDao {
 	public boolean insertExamResult(ExamResult examResult) throws HrException;
-	public ArrayList<ExamResult> fetchQuestions() throws HrException;
+	public ArrayList<ExamResult> fetchExamResult() throws HrException;
 
 }

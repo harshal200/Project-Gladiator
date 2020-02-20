@@ -29,7 +29,7 @@ public class ExamResultDaoImpl implements ExamResultDao {
 	}
 
 	@Override
-	public ArrayList<ExamResult> fetchQuestions() throws HrException {
+	public ArrayList<ExamResult> fetchExamResult() throws HrException {
 		String strqry="ExamResult";
 		Query qry=manager.createQuery(strqry);
 		ArrayList<ExamResult> lst=(ArrayList<ExamResult>) qry.getResultList();
