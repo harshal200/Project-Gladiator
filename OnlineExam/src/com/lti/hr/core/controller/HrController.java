@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lti.hr.core.entities.AdminLogin;
+//import com.lti.hr.core.entities.AdminLogin;
 
 import com.lti.hr.core.entities.UserRegister;
 import com.lti.hr.core.exception.HrException;
-import com.lti.hr.core.service.AdminLoginService;
+//import com.lti.hr.core.service.AdminLoginService;
 import com.lti.hr.core.service.UserRegisterService;
 
 @RestController

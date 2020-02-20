@@ -10,57 +10,57 @@ import javax.persistence.Table;
 public class Question {
 
 	@Id
-	@Column(name="question_id")
-	private int question_id;
+	@Column(name="QUESTION_ID")
+	private int questionId;
 	
-	@Column(name="question")
+	@Column(name="QUESTION")
 	private int question;
 	
-	@Column(name="option_1")
-	private int option_1;
+	@Column(name="OPTION_1")
+	private int option1;
 	
-	@Column(name="option_2")
-	private int option_2;
+	@Column(name="OPTION_2")
+	private int option2;
 	
-	@Column(name="option_3")
-	private int option_3;
+	@Column(name="OPTION_3")
+	private int option3;
 	
-	@Column(name="option_4")
-	private int option_4;
+	@Column(name="OPTION_4")
+	private int option4;
 	
-	@Column(name="correct_answer")
-	private int correct_answer;
+	@Column(name="CORRECT_ANSWER")
+	private int correctAnswer;
 	
-	@Column(name="subject_id")
-	private int subject_id;
+	@Column(name="SUBJECT_ID")
+	private int subjectId;
 	
-	@Column(name="levels")
+	@Column(name="LEVELS")
 	private int levels;
-	
+
 	public Question() {
-		// TODO Auto-generated constructor stub
+		super();
 	}
 
-	public Question(int question_id, int question, int option_1, int option_2, int option_3, int option_4,
-			int correct_answer, int subject_id, int levels) {
+	public Question(int questionId, int question, int option1, int option2, int option3, int option4, int correctAnswer,
+			int subjectId, int levels) {
 		super();
-		this.question_id = question_id;
+		this.questionId = questionId;
 		this.question = question;
-		this.option_1 = option_1;
-		this.option_2 = option_2;
-		this.option_3 = option_3;
-		this.option_4 = option_4;
-		this.correct_answer = correct_answer;
-		this.subject_id = subject_id;
+		this.option1 = option1;
+		this.option2 = option2;
+		this.option3 = option3;
+		this.option4 = option4;
+		this.correctAnswer = correctAnswer;
+		this.subjectId = subjectId;
 		this.levels = levels;
 	}
 
-	public int getQuestion_id() {
-		return question_id;
+	public int getQuestionId() {
+		return questionId;
 	}
 
-	public void setQuestion_id(int question_id) {
-		this.question_id = question_id;
+	public void setQuestionId(int questionId) {
+		this.questionId = questionId;
 	}
 
 	public int getQuestion() {
@@ -71,52 +71,52 @@ public class Question {
 		this.question = question;
 	}
 
-	public int getOption_1() {
-		return option_1;
+	public int getOption1() {
+		return option1;
 	}
 
-	public void setOption_1(int option_1) {
-		this.option_1 = option_1;
+	public void setOption1(int option1) {
+		this.option1 = option1;
 	}
 
-	public int getOption_2() {
-		return option_2;
+	public int getOption2() {
+		return option2;
 	}
 
-	public void setOption_2(int option_2) {
-		this.option_2 = option_2;
+	public void setOption2(int option2) {
+		this.option2 = option2;
 	}
 
-	public int getOption_3() {
-		return option_3;
+	public int getOption3() {
+		return option3;
 	}
 
-	public void setOption_3(int option_3) {
-		this.option_3 = option_3;
+	public void setOption3(int option3) {
+		this.option3 = option3;
 	}
 
-	public int getOption_4() {
-		return option_4;
+	public int getOption4() {
+		return option4;
 	}
 
-	public void setOption_4(int option_4) {
-		this.option_4 = option_4;
+	public void setOption4(int option4) {
+		this.option4 = option4;
 	}
 
-	public int getCorrect_answer() {
-		return correct_answer;
+	public int getCorrectAnswer() {
+		return correctAnswer;
 	}
 
-	public void setCorrect_answer(int correct_answer) {
-		this.correct_answer = correct_answer;
+	public void setCorrectAnswer(int correctAnswer) {
+		this.correctAnswer = correctAnswer;
 	}
 
-	public int getSubject_id() {
-		return subject_id;
+	public int getSubjectId() {
+		return subjectId;
 	}
 
-	public void setSubject_id(int subject_id) {
-		this.subject_id = subject_id;
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
 	}
 
 	public int getLevels() {
@@ -129,11 +129,8 @@ public class Question {
 
 	@Override
 	public String toString() {
-		return "Question [question_id=" + question_id + ", question=" + question + ", option_1=" + option_1
-				+ ", option_2=" + option_2 + ", option_3=" + option_3 + ", option_4=" + option_4 + ", correct_answer="
-				+ correct_answer + ", subject_id=" + subject_id + ", levels=" + levels + "]";
-	}
-	
-	
-	
+		return "Question [questionId=" + questionId + ", question=" + question + ", option1=" + option1 + ", option2="
+				+ option2 + ", option3=" + option3 + ", option4=" + option4 + ", correctAnswer=" + correctAnswer
+				+ ", subjectId=" + subjectId + ", levels=" + levels + "]";
+	}	
 }
