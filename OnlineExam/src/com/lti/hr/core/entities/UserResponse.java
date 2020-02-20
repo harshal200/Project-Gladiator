@@ -15,8 +15,8 @@ public class UserResponse {
 	@Column(name="USERRESPONSE_ID")
 	private int userResponseId;
 	
-	@Column(name="EXAM_ID")
-	private int examId;
+	@Column(name="EXAM_RESULT_ID")
+	private int examResultId;
 	
 	@Column(name="QUESTION_ID")
 	private int questionId;
@@ -26,13 +26,12 @@ public class UserResponse {
 
 	public UserResponse() {
 		super();
-		
 	}
 
-	public UserResponse(int userResponseId, int examId, int questionId, String selectedAnswer) {
+	public UserResponse(int userResponseId, int examResultId, int questionId, String selectedAnswer) {
 		super();
 		this.userResponseId = userResponseId;
-		this.examId = examId;
+		this.examResultId = examResultId;
 		this.questionId = questionId;
 		this.selectedAnswer = selectedAnswer;
 	}
@@ -45,12 +44,12 @@ public class UserResponse {
 		this.userResponseId = userResponseId;
 	}
 
-	public int getExamId() {
-		return examId;
+	public int getExamResultId() {
+		return examResultId;
 	}
 
-	public void setExamId(int examId) {
-		this.examId = examId;
+	public void setExamResultId(int examResultId) {
+		this.examResultId = examResultId;
 	}
 
 	public int getQuestionId() {
@@ -71,7 +70,7 @@ public class UserResponse {
 
 	@Override
 	public String toString() {
-		return "UserResponse [userResponseId=" + userResponseId + ", examId=" + examId + ", questionId=" + questionId
-				+ ", selectedAnswer=" + selectedAnswer + "]";
-	}
+		return "UserResponse [userResponseId=" + userResponseId + ", examResultId=" + examResultId + ", questionId="
+				+ questionId + ", selectedAnswer=" + selectedAnswer + "]";
+	}	
 }

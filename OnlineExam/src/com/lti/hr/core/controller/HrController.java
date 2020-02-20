@@ -22,14 +22,18 @@ import com.lti.hr.core.service.UserRegisterService;
 public class HrController {
 
 	
-	  @Autowired private UserRegisterService service;
+	  @Autowired
+	  private UserRegisterService service;
 	  
 	  
 	  @GetMapping(value = "/userList",produces="application/json") 
 	  public @ResponseBody ArrayList<UserRegister> fetch() { 
 		  ArrayList<UserRegister> userList = null;
 	  try { userList = service.fetch(); } catch(HrException e) {
-	  e.printStackTrace(); } return userList; }
+	  e.printStackTrace(); 
+	  } 
+	  return userList; 
+	  }
 	  
 	
 	  @PostMapping(value="/addUser",consumes="application/json")
