@@ -19,7 +19,7 @@ public class SubjectDaoImpl implements SubjectDao {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	@Override
-	public ArrayList<Subject> fetchSubject() throws HrException {
+	public ArrayList<Subject> fetchSubjectDetails() throws HrException {
 		String strqry="from Subject";
 		Query qry=manager.createQuery(strqry);
 		ArrayList<Subject> lst=(ArrayList<Subject>) qry.getResultList();
